@@ -13,21 +13,32 @@ class Post < ApplicationRecord
 
   def new
     @post = Post.new
+    render json: @post
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save!
       flash[:success] = "Your post is posted!"
-      redirect_to root_path
+      render json: @post
     else
-      render :new
+      render json: @post.errors
     end
   end
 
 
+  def update
+    @post = Post.find(params[:id])
+    @post = Post.new(post_params)
+    @post.save!
+    render json: @post
+  end
 
 
+private
 
+  def post_params
+    params.require(:post).permit(:title, :body, :user_id)
+  end
 
 end

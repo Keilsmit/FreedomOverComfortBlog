@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
 
-
-
-  resources :posts
   root 'homepage#home'
-  
+
   resources :users
+  resources :posts
 
 
-
-
+  #default route
+  get '/:user(/:random)' => 'users#static'
 
 
 

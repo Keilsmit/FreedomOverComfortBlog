@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'homepage#home'
 
   resources :users
+  #currently no need for users
   resources :posts
 
 

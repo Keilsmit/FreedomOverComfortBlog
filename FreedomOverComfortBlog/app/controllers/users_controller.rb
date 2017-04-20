@@ -42,7 +42,7 @@ class UsersController < ApplicationController
       render json: @followees
     end
 
-
+    #note to self...go back and drop User table...not needed!!!
 
 private
 

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comments
   root 'homepage#home'
 
   resources :users
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   resources :posts
 
 
-  #default route
+  #default route222
   get '/:user(/:random)' => 'users#static'
 
 

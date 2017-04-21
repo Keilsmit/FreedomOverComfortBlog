@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :comments
+
   root 'homepage#home'
 
   resources :users
   #currently no need for users
   resources :posts
-
+  resources :comments
 
   #default route222
   get '/:user(/:random)' => 'users#static'
